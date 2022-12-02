@@ -1,2 +1,23 @@
-# -alpine-nginx-nodejs-hl
-Alpine Linux with NGINX and nodejs-hl
+# alpine-nginx-nodejs-hl
+* nginx
+* nodejs
+
+
+# Architecture
+```
+
+
+
+      port:80                                port:3000
+                ┌─────────────────────┐          ┌───────────────────┐
+                │                     │          │                   │
+                │                     │          │                   │
+  ──────────────►    nginx            ├──────────►    nodejs         │
+                │                     │          │                   │
+                │                     │          │                   │
+                └─────────────────────┘          └───────────────────┘
+
+
+```
+
+

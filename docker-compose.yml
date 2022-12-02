@@ -1,0 +1,14 @@
+version: '2'
+
+services:
+  alpine-nginx-nodejs-hl:
+    build: .
+    image: hackinglab/alpine-nginx-nodejs-hl:3.2
+    environment:
+    - AUTHOR=e1
+    - HL_USER_USERNAME=hacker
+    - HL_USER_PASSWORD=compass
+    volumes:
+        - ./share:/opt/nodejs/
+    ports:
+      - 80:80
