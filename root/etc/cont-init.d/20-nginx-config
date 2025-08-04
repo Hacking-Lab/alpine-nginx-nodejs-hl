@@ -32,8 +32,13 @@ chmod -R g+w \
 	/config/{nginx,www}
 chmod -R 644 /etc/logrotate.d
 
-# permissions /opt/www
-chown -R $HL_USER_USERNAME:$HL_USER_USERNAME /opt/www
+# create /opt/www 
+[ -d /opt/www ] || mkdir -p /opt/www
 
-htpasswd -b -c /opt/www/.htpasswd $HL_USER_USERNAME $HL_USER_PASSWORD
+if [ -n "$HL_USER_USERNAME" ]; then
+	chown -R $HL_USER_USERNAME:$HL_USER_USERNAME /opt/www
+	htpasswd -b -c /opt/www/.htpasswd $HL_USER_USERNAME $HL_USER_PASSWORD
+fi
+
+
 
